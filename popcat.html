@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <H2>POP CAT</H2>
+        <img src="./src/181.jpg" id="imagepop">
+    </div>
+    <audio src="./src/y2mate.com - Pop cat_320kbps.mp3" id="popsound"></audio>
+    <script language="javascript">
+        var myImge = document.getElementById('imagepop');
+        var mySound = document.getElementById('popsound');
+        var myTimeOut;
+        myImge.addEventListener('mousedown', () => {
+            clearTimeout(myTimeOut);
+            mySound.pause();
+            mySound.currentTime = 0
+            mySound.play();
+            myImge.src = "./src/b02.jpg";
+            myTimeOut = setTimeout(() => {
+                mySound.pause();
+                mySound.currentTime = 0
+            }, 130)
+        });
+        myImge.addEventListener('mouseup', () => {
+            myImge.src = "./src/181.jpg";
+            
+        });
+    </script>
+</body>
+
+</html>
